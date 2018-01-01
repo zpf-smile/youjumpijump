@@ -21,8 +21,15 @@ Android 设备
 1. Android 手机一台，电脑上安装 ADB，连接上电脑后开启 USB 调试模式，开发者选项中有模拟触摸选项的请一并开启
 2. 进入微信打开微信跳一跳，点击开始游戏
 3. 将下载的文件 Push 到手机上 `adb push ./youjumpijump-android /data/local/tmp/ && adb shell`
-4. 跑起来 `cd /data/local/tmp/ && chmod 775 ./youjumpijump-android || true && ./youjumpijump-android`
+4. 跑起来 `cd /data/local/tmp/ && chmod 775 ./youjumpijump-android && ./youjumpijump-android`
 5. 可以开启开发者选项中的指针位置选项，每次跳动的时候会在屏幕上画一条线，可以判断程序每次的定位准不准
+
+如果手上没有电脑，想只通过手机搞定
+
+1. 在手机上下载安装 [Termux 终端](https://apkpure.com/cn/termux/com.termux)，安装 curl `apt install curl`
+2. 将文件拉到手机上 `curl -o youjumpijump-android https://github.com/faceair/youjumpijump/releases/download/1.14/youjumpijump-android && chmod 775 ./youjumpijump-android`
+3. 跑起来 `sleep 20 && ./youjumpijump-android 2.04`，执行完后迅速切到微信游戏界面，等待 20s 后会自动开始，如果 2.04 系数不准可以调整下命令后的参数
+4. 可以开启开发者选项中的指针位置选项，每次跳动的时候会在屏幕上画一条线，可以判断程序每次的定位准不准
 
 iOS 设备
 
